@@ -1,0 +1,15 @@
+<apex:page controller="c4">
+
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:repeat value="{!accList}" var="a" >
+{!a.Name}<br/>
+
+</apex:repeat>
+
+<apex:commandButton value="Show all accounts"
+action="{!showall}"/>
+
+</apex:pageBlock> </apex:form> </apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="contact" extensions="deletemultiplecont" recordSetVar="contacts" >
+    <apex:form id="frm">
+          <apex:pageblock id="pgblk">
+            <apex:pageBlocktable value="{!contacts}" var="cont"  >
+			  <apex:column headerValue="Action" >
+			    <apex:commandlink value="delete" action="{!delmultplerec}" reRender="pgblk"> 
+                   <apex:param value="{!cont.id}" assignTo="{!asgn}" name="test"/> 
+                  </apex:commandlink>
+			  </apex:column>
+			  <apex:column headerValue="Name"  value="{!cont.Name}"></apex:column>
+			  <apex:column headerValue="MailingCity" value="{!cont.MailingCity}" ></apex:column>
+			  <apex:column headerValue="Phone"  value="{!cont.phone}"></apex:column>
+              </apex:pageBlocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

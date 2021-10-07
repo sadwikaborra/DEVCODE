@@ -1,0 +1,6 @@
+<aura:component>
+ <aura:attribute name="hub" type="Hub__c"/>
+ <span> 
+  <a href = "" aura:id="{!v.hub.Id}" onclick = "{!c.navigateToOppty}">{!v.hub.Name}</a>
+ </span>   
+</aura:component>

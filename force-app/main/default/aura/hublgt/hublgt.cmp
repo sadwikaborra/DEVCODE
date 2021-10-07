@@ -1,0 +1,26 @@
+<aura:component controller="lgt" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+  <!--on component load call doInit javaScript function and fetch records from server-->  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="bikeList" type="List"/>
+    
+    <div class="slds-m-around_x-large">
+      <lightning:card> 
+       <lightning:accordion aura:id="accordion" activeSectionName="B">
+            <aura:iteration items="{!v.bikeList}" var="bike">
+                <lightning:accordionSection name="{!bike.Name}" label="{!bike.Name}">
+                    <aura:set attribute="body">
+                        <aura:iteration items="{!bike.Bookings__r}" var="booking">
+                            <p>{!booking.Name},{!booking.BookingTime__c},{!booking.KMCovered__c},{!booking.Customer__r.Name},{!booking.Customer__r.Status__c}</p>
+                        </aura:iteration>
+                        
+                    </aura:set>
+                </lightning:accordionSection>
+            </aura:iteration>
+       
+    </lightning:accordion>
+          </lightning:card> 
+        
+    </div>
+    
+</aura:component>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Cricketers List" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+            <template for:each={CricketersList} for:item="cricketers">
+               
+                <li key={cricketers.Id}>
+                    <span class="slds-badge">
+                        <span class="slds-badge_icon slds-badge_icon_left">
+                          <span class="slds-icon_container slds-icon-utility-moneybag slds-current-color" title="Description of icon when needed">
+                            <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#moneybag"></use>
+                            </svg>
+                          </span>
+                      </span>{cricketers.Name}</span>
+                    <div class=".slds-badge_inverse">
+                  
+                </div>
+                </li>
+            
+            </template>
+            
+        </ul>
+    </lightning-card>
+</template>

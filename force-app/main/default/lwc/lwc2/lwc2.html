@@ -1,0 +1,12 @@
+<template>
+    <lightning-combobox
+    name="Color"
+    label="Color"
+    placeholder="Choose any Color"
+    value={value}
+    onchange={handleChange}
+    options={options}
+    required
+    class="slds-box"></lightning-combobox>
+    <p>Selected Color is: {value}</p>
+</template>
